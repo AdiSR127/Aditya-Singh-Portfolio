@@ -1,5 +1,5 @@
 /* Typing Animation */
-const roles = ["AEM Developer", "DevOps Engineer", "Adobe Consultant"];
+const roles = ["AEM Developer", "DevOps Engineer", "Adobe AEM Consultant"];
 let roleIndex = 0, charIndex = 0;
 const typingEl = document.getElementById("typing");
 
