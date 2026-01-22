@@ -388,6 +388,38 @@
   background: rgba(99, 102, 241, 0.15);
 }
 
+/* Contact & Socials (Top Section) */
+.contact {
+  margin-top: 10px;
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.contact a {
+  text-decoration: none;
+  font-weight: 500;
+  color: inherit;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact a:hover {
+  color: #6366f1;
+  transform: translateY(-2px);
+}
+
+.divider {
+  opacity: 0.4;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
 
 /* Hide logo on mobile devices */
 @media (max-width: 768px) {
