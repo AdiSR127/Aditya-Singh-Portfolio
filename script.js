@@ -121,3 +121,11 @@ scrollHelper.addEventListener("click", () => {
 
 window.addEventListener("scroll", updateScrollHelper);
 window.addEventListener("load", updateScrollHelper);
+
+// Premium Loader
+window.addEventListener("load", () => {
+  const loader = document.getElementById("page-loader");
+  setTimeout(() => {
+    loader.classList.add("hide");
+  }, 900);
+});

@@ -265,3 +265,78 @@
     50% { transform: translateY(6px); }
   }
   
+/* Premium Loader */
+#page-loader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, #eef2ff, #f8fafc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#page-loader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Glass Card */
+.loader-card {
+  padding: 40px 50px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.18);
+  text-align: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Gradient Ring */
+.loader-ring {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #6366f1,
+    #8b5cf6,
+    #ec4899,
+    #6366f1
+  );
+  animation: spin 1.4s linear infinite;
+  margin: 0 auto 20px;
+  position: relative;
+}
+
+.loader-ring::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 50%;
+}
+
+/* Text */
+.loader-card h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.loader-card p {
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+/* Animations */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
