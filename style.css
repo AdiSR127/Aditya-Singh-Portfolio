@@ -340,3 +340,9 @@
   50% { transform: translateY(-10px); }
 }
 
+/* Hide logo on mobile devices */
+@media (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+}
