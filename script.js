@@ -145,7 +145,7 @@ toggleBtn.onclick = () => {
 
 
 const knowledge = {
-  skills: "Aditya is skilled in AEM, Java, Sling, OSGi, Dispatcher, Jenkins, Docker, Kubernetes, React, and Generative AI.",
+  skills: "Aditya is skilled in AEM, Java, Sling, OSGi, Dispatcher, Jenkins, Docker, Kubernetes, and Generative AI.",
   experience: "Aditya works at Adobe as a Technical Product Consultant II with 3+ years experience in AEM Cloud, DevOps, performance optimization, and enterprise deployments.",
   projects: "Key projects include AEM On-call Scheduler, Genie Navigator, AEM Instance Hub, and a React Medical Portal.",
   email: "You can reach Aditya at adiusingh127@gmail.com.",
