@@ -129,3 +129,64 @@ window.addEventListener("load", () => {
     loader.classList.add("hide");
   }, 900);
 });
+
+
+// Chatbot logic
+const toggleBtn = document.getElementById("chatbot-toggle");
+const chatbotBox = document.getElementById("chatbot-box");
+const input = document.getElementById("chatbot-input");
+const sendBtn = document.getElementById("chatbot-send");
+const messages = document.getElementById("chatbot-messages");
+
+toggleBtn.onclick = () => {
+  const isOpen = chatbotBox.classList.toggle("active");
+  toggleBtn.textContent = isOpen ? "❌" : "💬";
+};
+
+
+const knowledge = {
+  skills: "Aditya is skilled in AEM, Java, Sling, OSGi, Dispatcher, Jenkins, Docker, Kubernetes, React, and Generative AI.",
+  experience: "Aditya works at Adobe as a Technical Product Consultant II with 3+ years experience in AEM Cloud, DevOps, performance optimization, and enterprise deployments.",
+  projects: "Key projects include AEM On-call Scheduler, Genie Navigator, AEM Instance Hub, and a React Medical Portal.",
+  email: "You can reach Aditya at adiusingh127@gmail.com.",
+  github: "Aditya's GitHub: https://github.com/AdiSR127/",
+  linkedin: "Aditya's LinkedIn: https://www.linkedin.com/in/aditya-s-b29ab0120/"
+};
+
+function botReply(text) {
+  text = text.toLowerCase();
+
+  if (text.includes("skill")) return knowledge.skills;
+  if (text.includes("experience") || text.includes("work")) return knowledge.experience;
+  if (text.includes("project")) return knowledge.projects;
+  if (text.includes("email") || text.includes("contact")) return knowledge.email;
+  if (text.includes("github")) return knowledge.github;
+  if (text.includes("linkedin")) return knowledge.linkedin;
+
+  return "You can ask about Aditya's skills, experience, projects, or contact info 🙂";
+}
+
+function addMessage(text, type) {
+  const div = document.createElement("div");
+  div.className = `msg ${type}`;
+  div.textContent = text;
+  messages.appendChild(div);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+sendBtn.onclick = sendMessage;
+input.addEventListener("keypress", e => {
+  if (e.key === "Enter") sendMessage();
+});
+
+function sendMessage() {
+  const text = input.value.trim();
+  if (!text) return;
+
+  addMessage(text, "user");
+  input.value = "";
+
+  setTimeout(() => {
+    addMessage(botReply(text), "bot");
+  }, 400);
+}
